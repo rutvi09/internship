@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship Finder | Internships</title>
+  <style>
+    /* ==== Global Styles ==== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==== Header ==== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 15px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00d2ff;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 100%;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ==== Hero Section ==== */
+    main {
+      flex: 1;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 60px auto 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00d2ff;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    /* ==== Internship Cards ==== */
+    .internship-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 350px;
+      perspective: 1000px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      border-radius: 16px;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      backface-visibility: hidden;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .flip-card-front {
+      background: linear-gradient(135deg, #001f3f, #004080);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .flip-card:hover .flip-card-front {
+      box-shadow: 0 12px 40px rgba(0, 114, 255, 0.6);
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front h3 {
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+
+    .flip-card-front p,
+    .flip-card-back p {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 5px 0;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .apply-btn:hover {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      transform: translateY(-2px);
+    }
+
+    /* Neon outline effect when clicked */
+    .flip-card.clicked .flip-card-inner {
+      box-shadow: 0 0 15px #00f, 0 0 30px #0ff, 0 0 45px #0ff, 0 0 60px #00f;
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.95em;
+    }
+
+    /* ==== Responsive ==== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .flip-card {
+        width: 90%;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Internship Finder</h1>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="internship.html" class="active">Internships</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Find Your Dream Internship</h2>
+      <p>Explore real opportunities from top companies tailored for students like you.</p>
+    </section>
+
+    <!-- Internship Listings -->
+    <section class="internship-list" id="internships">
+      <!-- Card 1 -->
+      <div class="flip-card" data-keywords="web development html css javascript frontend">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Web Development Intern</h3>
+            <p><strong>Skills:</strong> HTML, CSS, JavaScript</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>About the Role</h3>
+            <p>Assist in building responsive websites, work with senior developers, and gain real-world experience in front-end design.</p>
+            <a href="info.html" class="apply-btn">Find Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flip-card" data-keywords="data analyst python sql excel analysis">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Data Analyst Intern</h3>
+            <p><strong>Skills:</strong> Python, Excel, SQL</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>About the Role</h3>
+            <p>Work on real datasets to extract insights, visualize data, and support business decisions using advanced analytics tools.</p>
+            <a href="info.html" class="apply-btn">Find Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flip-card" data-keywords="ui ux design figma adobe creative">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>UI/UX Design Intern</h3>
+            <p><strong>Skills:</strong> Figma, Adobe XD</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>About the Role</h3>
+            <p>Collaborate with design teams to create user-friendly interfaces and enhance user experience across web and mobile platforms.</p>
+            <a href="info.html" class="apply-btn">Find Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flip-card" data-keywords="marketing social media seo strategy branding">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Digital Marketing Intern</h3>
+            <p><strong>Skills:</strong> SEO, Social Media, Content Writing</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>About the Role</h3>
+            <p>Plan and execute marketing campaigns, manage social channels, and help grow online engagement for clients.</p>
+            <a href="info.html" class="apply-btn">Find Deatils</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Internship Finder For Students | All Rights Reserved </p>
+  </footer>
+
+  <script>
+    // Toggle mobile nav and hamburger animation
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    // Neon Outline on Click
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', () => {
+        flipCards.forEach(c => c !== card && c.classList.remove('clicked'));
+        card.classList.toggle('clicked');
+      });
+    });
+
+    // Internship Search (if a search input exists)
+    function searchInternships() {
+      const query = document.getElementById('searchBar')?.value.toLowerCase() || '';
+      const cards = document.querySelectorAll('.flip-card');
+      cards.forEach(card => {
+        const keywords = card.getAttribute('data-keywords');
+        card.style.display = keywords.includes(query) || query === '' ? 'block' : 'none';
+      });
+    }
+
+    document.getElementById('searchBar')?.addEventListener('input', searchInternships);
+  </script>
+</body>
+</html>
+
+
