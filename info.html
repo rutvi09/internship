@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Internship Finder | Home</title>
+  <style>
+    /* ==== Global Styles ==== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ==== Header ==== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 15px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00d2ff;
+    }
+
+    /* ==== Main Section ==== */
+    main {
+      flex: 1;
+      padding: 20px 40px;
+      overflow-x: auto;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      max-width: 95vw;
+      margin: 20px auto 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+      font-size: 0.95em;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      background: rgba(0, 210, 255, 0.2);
+      color: #00d2ff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    tr:hover {
+      background: rgba(0, 210, 255, 0.1);
+    }
+
+    a {
+      color: #00d2ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #00a3cc;
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+      main {
+        padding: 10px;
+      }
+      th, td {
+        padding: 8px 10px;
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Internship Finder</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="internship.html">Internships</a>
+    </nav>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Email ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Innovate2Automate Technologies Pvt Ltd</td>
+          <td>Bengaluru, Karnataka</td>
+          <td>No.104, RMZ Infinity, 1st Floor Tower D, Old Madras Road, Bangalore – 560016</td>
+          <td>NA</td>
+          <td><a href="mailto:contactus@i2atechs.com">contactus@i2atechs.com</a></td>
+        </tr>
+        
+        <tr>
+          <td>Digiflux IT Solutions</td>
+          <td>Vadodara, Gujarat</td>
+          <td>301, Gokulesh II, Sampatrao Colony, R.C. Dutt Road, Alkapuri – 390007</td>
+          <td><a href="tel:+919601720466">+91 9601720466</a></td>
+          <td><a href="mailto:info@digiflux.io">info@digiflux.io</a></td>
+        </tr>
+        <tr>
+          <td>Sunflower Lab</td>
+          <td>Vadodara, Gujarat</td>
+          <td>KP Shopping Center, 101, Sayajibaug Rd, Karelibagh, Vadodara – 390001</td>
+          <td><a href="tel:+916146647674">+91 61466 47674</a></td>
+          <td><a href="mailto:info@thesunflowerlab.com">info@thesunflowerlab.com</a></td>
+        </tr>
+        <tr>
+          <td>United Comp Inc (UCI)</td>
+          <td>Vadodara, Gujarat</td>
+          <td>803, Iscon Atria 2, Gotri Road, Vadodara – 390021</td>
+          <td><a href="tel:+917183925100">+91 718-392-5100</a></td>
+          <td><a href="mailto:info@uciny.com">info@uciny.com</a></td>
+        </tr>
+        <tr>
+          <td>Stridely Solutions Pvt Ltd</td>
+          <td>Vadodara, Gujarat</td>
+          <td>501/B/C/D, C Square, Plot C, Sarabhai Campus, Nr Genda Circle, Vadodara – 390023</td>
+          <td><a href="tel:+917948005566">+91-79-4800-5566</a></td>
+          <td><a href="mailto:yjshah@stridelysolutions.com">yjshah@stridelysolutions.com</a></td>
+        </tr>
+        <tr>
+          <td>MyDhan Technologies Pvt Ltd</td>
+          <td>Vadodara, Gujarat</td>
+          <td>Office 1105, Nilamber Triumph, Nilamber Circle, Gotri Road, Vadodara – 390021</td>
+          <td>NA</td>
+          <td><a href="mailto:MyDhan.technologies@outlook.com">MyDhan.technologies@outlook.com</a></td>
+        </tr>
+        <tr>
+          <td>PayGuru Technosoft Pvt Ltd</td>
+          <td>Vadodara, Gujarat</td>
+          <td>613, Samanvay Silver, Shivaji Circle, Mujmahuda, Vadodara – 390020</td>
+          <td><a href="tel:+917016183622">+91 7016183622</a></td>
+          <td><a href="mailto:support@payguru.in">support@payguru.in</a></td>
+        </tr>
+        <tr>
+          <td>Astar Technologies</td>
+          <td>Vadodara, Gujarat</td>
+          <td>507 Sears Tower, Gotri Road, Sevasi, Vadodara – 391101</td>
+          <td><a href="tel:+918140440000">+91 8140440000</a></td>
+          <td><a href="mailto:info@astartechnologies.net">info@astartechnologies.net</a></td>
+        </tr>
+        <tr>
+          <td>Unite Computech Info India Pvt Ltd</td>
+          <td>Vadodara, Gujarat</td>
+          <td>803, Iskon Atria-2, Gotri Road, Vadodara – 390021</td>
+          <td>NA</td>
+          <td><a href="mailto:nimishdesai64@gmail.com">nimishdesai64@gmail.com</a></td>
+        </tr>
+        <tr>
+          <td>Skyttus Pvt Ltd</td>
+          <td>Valsad, Gujarat</td>
+          <td>1st Floor, F-121, Sai Lila Mall, P.H.Q. Road, Abrama, Valsad – 396001</td>
+          <td><a href="tel:+919820221834">+91 9820221834</a> / <a href="tel:+919979115113">+91 9979115113</a></td>
+          <td><a href="mailto:info@skyttus.com">info@skyttus.com</a></td>
+        </tr>
+        <tr>
+          <td>Horizontal Digital</td>
+          <td>Vadodara, Gujarat</td>
+          <td>3rd and 4th Floor, Gujarat Samachar Building, Opp. Utkarsh Petrol Pump, Near L&T Circle, Karelibaug, Vadodara – 390018</td>
+          <td><a href="tel:+912652323272">+91-265-232-3272</a></td>
+          <td><a href="mailto:BDQ@horizontal.com">BDQ@horizontal.com</a></td>
+        </tr>
+        <tr>
+          <td>ASTAR TECHNOLOGIES</td>
+          <td>Vadodara, Gujarat</td>
+          <td>507 Sears Tower, Gotri Road, Sevasi, Vadodara – 391101</td>
+          <td><a href="tel:+918140440000">+91 8140440000</a></td>
+          <td><a href="mailto:info@astartechnologies.net">info@astartechnologies.net</a></td>
+        </tr>
+        <tr>
+          <td>Dhyey Consulting</td>
+          <td>Vadodara, Gujarat</td>
+          <td>514 to 526 One West, Bhayli Sevasi Canal Road, Vadodara – 391101</td>
+          <td><a href="tel:+919537648999">+91 95376-48999</a></td>
+          <td><a href="mailto:enquiry@dhyey.com">enquiry@dhyey.com</a></td>
+        </tr>
+        <tr>
+          <td>N10 Technosoft</td>
+          <td>Ahmedabad, Gujarat</td>
+          <td>C 1002 Kalasagar Skyz, Jivraj Park Road, Behind Vejalpur Police Chowki, Vejalpur, Ahmedabad – 380051</td>
+          <td><a href="tel:+919601708260">+91 9601708260</a></td>
+          <td><a href="mailto:info@n10tech.com">info@n10tech.com</a></td>
+        </tr>
+        <tr>
+          <td>It idol tecnology</td>
+          <td>Valsad, Gujarat</td>
+          <td>A-25 to 29, Pramukh Sannidhya, Abrama, Dharampur Road, Valsad – 396002</td>
+          <td><a href="tel:+919328891543">+91 93288 91543</a></td>
+          <td><a href="mailto:info@itidoltechnology.com">info@itidoltechnology.com</a></td>
+        </tr>
+        <tr>
+          <td>1rivet</td>
+          <td>Reston, Virginia, USA</td>
+          <td>12355 Sunrise Valley Dr, Suite 610, Reston, VA – 20191</td>
+          <td><a href="tel:8339003607">(833) 900-3607</a></td>
+          <td><a href="mailto:info@1rivet.com">info@1rivet.com</a></td>
+        </tr>
+        <tr>
+          <td>Tecnoprism Pvt. Ltd.</td>
+          <td>Vadodara, Gujarat</td>
+          <td>12th Floor, Vihav Supremus, Gotri Rd, Gotri, Vadodara – 390021</td>
+          <td><a href="tel:+916352937613">+91 63529 37613</a></td>
+          <td><a href="mailto:business@tecnoprism.com">business@tecnoprism.com</a></td>
+        </tr>
+        <tr>
+          <td>WeLogical Software Solution</td>
+          <td>Valsad, Gujarat</td>
+          <td>214, Sai Leela Mall, Dharampur Road, Abrama, Valsad – 396001</td>
+          <td><a href="tel:+912632357437">+91 2632-357437</a></td>
+          <td><a href="mailto:info@welogicalsolutions.com">info@welogicalsolutions.com</a></td>
+        </tr>
+        <tr>
+          <td>Larsen &amp; Toubro Limited</td>
+          <td>Mumbai, Maharashtra</td>
+          <td>L&amp;T House, Ballard Estate, P. O. Box: 278, Mumbai – 400001</td>
+          <td><a href="tel:+912267525656">+91 22 6752 5656</a></td>
+          <td><a href="mailto:infodesk@larsentoubro.com">infodesk@larsentoubro.com</a></td>
+        </tr>
+        <tr>
+          <td>Unicode technologies</td>
+          <td>Ahmedabad, Gujarat</td>
+          <td>C-506, Titanium City Centre, 100ft Anandnagar Road, Satellite, Ahmedabad – 380015</td>
+          <td><a href="tel:+919825726467">+91 98257 26467</a></td>
+          <td><a href="mailto:tanmay@unicodetechnologies.in">tanmay@unicodetechnologies.in</a></td>
+        </tr>
+        <tr>
+          <td>Softsages Technology</td>
+          <td>Malvern, PA, USA</td>
+          <td>20 Mystic Ln, 2nd Floor, Malvern, PA 19355</td>
+          <td><a href="tel:+14843203362">+1 484-320-3362</a></td>
+          <td><a href="mailto:info@softsages.com">info@softsages.com</a></td>
+        </tr>
+        <tr>
+          <td>Web Bridge Services</td>
+          <td>Haridwar, Uttarakhand, India</td>
+          <td>2nd Floor Of Jindal's Opp. Kotak Mahindra Bank Old Ranipur, More, Haridwar - 249407</td>
+          <td><a href="tel:+917500009555">+91 7500009555</a></td>
+          <td><a href="mailto:contact@webbridge.in">contact@webbridge.in</a></td>
+        </tr>
+        <tr>
+          <td>Oneknotone technologies LLP</td>
+          <td>Vadodara, Gujarat, India</td>
+          <td>5th Floor, Trisha Square 1, Jetalpur Road, Vadodara - 390007</td>
+          <td><a href="tel:+917984732336">+91 7984732336</a></td>
+          <td><a href="mailto:info@oneknotone.co">info@oneknotone.co</a></td>
+        </tr>
+        <tr>
+          <td>Cambay consulting LLC</td>
+          <td>Katy, Texas, USA</td>
+          <td>1838 Snake River Road, Suite A, Katy, TX 77449</td>
+          <td><a href="tel:+18326170901">+1 832-617-0901</a></td>
+          <td><a href="mailto:info@cambaycs.com">info@cambaycs.com</a></td>
+        </tr>
+        <tr>
+          <td>Adri IT Solution</td>
+          <td>Vadodara, Gujarat, India</td>
+          <td>T-17/E, India Bulls Mega Mall, Jetalpur Road, Vadodara - 390007</td>
+          <td>NA</td>
+          <td><a href="mailto:info@adriitsolution.com">info@adriitsolution.com</a></td>
+        </tr>
+        <tr>
+          <td>Arctic Circle</td>
+          <td>West Jordan, Utah, USA</td>
+          <td>4214 S 4000 W, West Jordan, UT 84084</td>
+          <td><a href="tel:+13015302222">+1 301-530-2222</a></td>
+          <td><a href="mailto:info@arcticcircle.com">info@arcticcircle.com</a></td>
+        </tr>
+        <tr>
+          <td>CSI Software</td>
+          <td>Vadodara, Gujarat, India</td>
+          <td>405, 4th Floor, Royal Complex, Gotri Road, Vadodara - 390021</td>
+          <td><a href="tel:+912652311223">+91 265-2311223</a></td>
+          <td><a href="mailto:info@csisoftware.com">info@csisoftware.com</a></td>
+        </tr>
+        <tr>
+  <td>Mamo Technolab</td>
+  <td>Vadodara, Gujarat, India</td>
+  <td>Office No 27, RAAMA EMPERRO, 4th Floor, Near Shell Petrol Pump, Vadodara - 390011</td>
+  <td><a href="tel:+919325910095">+91 9325910095</a></td>
+  <td><a href="mailto:info@mamotechnolabs.com">info@mamotechnolabs.com</a></td>
+</tr>
+<tr>
+  <td>Cloud infosoft</td>
+  <td>Vadodara, Gujarat, India</td>
+  <td>506-507, VCCI Commercial Complex, Makarpura GIDC, Vadodara - 390010</td>
+  <td><a href="tel:+918264550626">+91 8264550626</a></td>
+  <td><a href="mailto:contact@cloudinfosoft.com">contact@cloudinfosoft.com</a></td>
+</tr>
+<tr>
+  <td>Alita infotech</td>
+  <td>Surat, Gujarat, India</td>
+  <td>330-335, The Galleria Shopping Hub, Near Sanjeevkumar Auditorium, Opp. New RTO, Pal, Adajan, Surat - 395009</td>
+  <td><a href="tel:+919327110445">+91 9327110445</a></td>
+  <td><a href="mailto:hello@alitainfotech.com">hello@alitainfotech.com</a></td>
+</tr>
+<tr>
+  <td>Karnavati Software Technologies</td>
+  <td>Vadodara, Gujarat</td>
+  <td>Office No. B-401, Lotus Aura-2, Sama Savli Road, Vemali, Vadodara – 390008</td>
+  <td>NA</td>
+  <td><a href="mailto:karnavatisoftwaretechnologies@gmail.com">karnavatisoftwaretechnologies@gmail.com</a></td>
+</tr>
+
+
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    &copy; 2025 Internship Finder. All rights reserved.
+  </footer>
+</body>
+</html>
