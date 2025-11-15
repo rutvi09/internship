@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Internship Finder</title>
+  <style>
+    /* ==== Global Styles ==== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')
+
+        no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ==== Header ==== */
+    header {
+      display: flex;
+      justify-content: space-between; /* Title left, nav right */
+      align-items: center;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00d2ff;
+    }
+
+    /* ==== Main Section ==== */
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ==== About Container ==== */
+    .about-container {
+      display: flex;
+      flex-direction: column; /* stack vertically */
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* ==== About Boxes ==== */
+    .about {
+      width: 100%;
+      background: linear-gradient(135deg, #001f3f, #004080);
+      padding: 35px 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+      line-height: 1.8;
+      text-align: justify;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 45px rgba(0, 114, 255, 0.6);
+    }
+
+    .about h2 {
+      color: #00c6ff;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2rem;
+      border-bottom: 2px solid #00d2ff;
+      display: inline-block;
+      padding-bottom: 5px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .about:hover h2 {
+      color: #00d2ff;
+      border-color: #00c6ff;
+    }
+
+    .about p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 15px 10px;
+      background: rgba(0, 0, 0, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.95rem;
+    }
+
+    /* ==== Responsive Styles ==== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .about {
+        padding: 25px 20px;
+      }
+
+      .about h2 {
+        font-size: 1.7rem;
+      }
+
+      .about p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .about h2 {
+        font-size: 1.5rem;
+      }
+
+      .about p {
+        font-size: 0.95rem;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Internship Finder</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="internship.html">Internships</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-container">
+      <!-- Card 1 -->
+      <section class="about">
+        <h2>About Internship Finder</h2>
+        <p>
+          <strong>Internship Finder</strong> is a dedicated platform designed to bridge the gap between 
+          talented students and leading organizations offering internship opportunities. Our mission is to 
+          empower students to gain meaningful professional experience that enhances their skills, confidence, 
+          and employability.
+        </p>
+
+        <p>
+          We provide a streamlined and transparent process that enables students to explore verified internships 
+          across various industries and disciplines. By curating quality opportunities from trusted employers, 
+          Internship Finder ensures that users can focus on what truly matters — building their future careers.
+        </p>
+      </section>
+
+      <!-- Card 2 -->
+      <section class="about">
+        <h2>Our Mission & Vision</h2>
+        <p>
+          At <strong>Internship Finder</strong>, we believe in empowering students through opportunity. We strive 
+          to connect passionate learners with employers seeking fresh perspectives and enthusiasm.
+        </p>
+
+        <p>
+          Our goal is to make internship discovery easy, transparent, and inspiring — providing a space where 
+          talent meets opportunity. As we grow, we aim to expand globally, helping students from all backgrounds 
+          access valuable work experiences that shape their future.
+        </p>
+      </section>
+
+      <!-- Card 3 -->
+      <section class="about">
+        <h2>Why Choose Us?</h2>
+        <p>
+          <strong>Internship Finder</strong> stands out for its commitment to authenticity and accessibility. 
+          Every internship listed on our platform is verified, ensuring students connect with genuine opportunities 
+          that match their aspirations.
+        </p>
+
+        <p>
+          We also provide resources, interview tips, and guidance from industry professionals to help students 
+          prepare for success. Whether you’re looking for a summer internship or a long-term placement, our 
+          platform helps you find the right match efficiently.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Internship Finder For Students | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
